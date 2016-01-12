@@ -1,12 +1,15 @@
-The "walkthru" of the game:
 
+How to play the game:
 
+1) Open the index.html in your browser.
 
-1) With the actor you have to reach the water.	
+2) See the actor at the bottom and the passing enemies.
 
-2) While moving across the road you have to try not to get in touch with the bugs.	
+3) With the actor you have to reach the water.
 
-3) Move the actor with the following keys:
+4) While moving across the road you have to try not to get in touch with the bugs.
+
+5) Move the actor with the following keys:
 	
 	- "up" for moving up
 	
@@ -16,4 +19,4 @@ The "walkthru" of the game:
 	
 	- "right" for moving right
 
-4) Reaching the water, you have won the game.
+6) Reaching the water, you have won the game.

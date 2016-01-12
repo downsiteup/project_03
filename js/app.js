@@ -34,11 +34,11 @@ var Actor = function(x, y){
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
-    }
+};
 
 Actor.prototype.update = function() {
 //Look's up if the player get's in touch with any enemy
-    for (i in allEnemies){
+    for (var i in allEnemies){
         enemy = allEnemies[i];
         if (this.x < (enemy.x+60) && this.x > (enemy.x - 70) && this.y < (enemy.y+20) && this.y > (enemy.y - 20))
             {
@@ -53,28 +53,31 @@ Actor.prototype.update = function() {
             this.y = 300;
             generateEnemies();
         }
-}
+};
 
 //The player to be displayed
 Actor.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //The player to be moved
 Actor.prototype.handleInput = function(key){
+    var tileWidth = 101,
+        tileHeight = 83;
+
     if(key === 'left' && this.x > 35){
-        this.x -=100;
+        this.x -= tileWidth;
     }
     if(key === 'up' && this.y > 35){
-        this.y -= 82.5;
+        this.y -= tileHeight;
     }
     if(key === 'right' && this.x < 390){
-        this.x += 100;
+        this.x += tileWidth;
     }
     if(key === 'down' && this.y < 355){
-        this.y +=82.5;
+        this.y += tileHeight;
     }
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -84,14 +87,14 @@ var actor;
 
 //Set the sequence of the enemies
 var generateEnemies = function(){
-    allEnemies = [new Enemy(200*Math.random()*2, 50), new Enemy(100*Math.random()*2, 200), new Enemy(300*Math.random()*2, 50),
+    allEnemies = [new Enemy(100*Math.random()*2, 50), new Enemy(200*Math.random()*2, 200), new Enemy(300*Math.random()*2, 50),
         new Enemy(400*Math.random()*2, 150)];
-}
+};
 
 var init = function() {
     generateEnemies();
     actor = new Actor(200, 300);
-}
+};
 
 init();
 
